@@ -212,6 +212,51 @@ body { position:relative; }
   #final-card .mascot { width:50px; height:48px; }
 }
 
+
+/* Final visual refinements: slightly closer/larger layout, without cropping photo ratios. */
+.page { padding:clamp(10px,1.5vh,16px) clamp(12px,1.7vw,24px); }
+.page .card { width:min(96vw,960px); max-width:960px; padding:clamp(18px,2.6vh,28px) clamp(20px,3.5vw,46px); }
+#start .card { padding:clamp(18px,3.2vh,34px) clamp(20px,3.5vw,46px); }
+#start .script { margin:6px 0 clamp(7px,1.4vh,12px); }
+#start .intro-gif { display:block; width:min(150px,36vw); height:clamp(54px,9vh,82px); object-fit:contain; margin:0 auto 5px; border-radius:10px; }
+#start .envelope-wrap { margin:clamp(8px,1.6vh,16px) auto clamp(8px,1.4vh,14px); }
+#album .card { padding:clamp(12px,1.8vh,20px) clamp(16px,2.5vw,30px); }
+#album .album-carousel { width:100%; max-width:650px; margin:4px auto 5px; }
+#album .album-slide img,
+#album .photo-placeholder { height:min(50svh,480px); max-height:min(50svh,480px); }
+#album .album-slide img { object-fit:contain; }
+#bouquet .wish.opened .wish-title:after {
+  content:"tap to close ♡";
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin:11px auto 9px;
+  padding-top:8px;
+  border-top:1px solid #ead8d1;
+  color:#a36f79;
+  font-size:9px;
+  font-weight:400;
+  letter-spacing:.07em;
+  line-height:1.45;
+  text-align:center;
+}
+@media(max-width:600px) {
+  .page { padding:9px; }
+  .page .card { width:100%; max-height:calc(100svh - 18px); padding-left:clamp(15px,4vw,24px); padding-right:clamp(15px,4vw,24px); }
+  #start .card { padding:clamp(16px,2.5vh,25px) 16px; }
+  #start .intro-gif { width:min(138px,34vw); height:clamp(48px,7.5vh,68px); margin-bottom:3px; }
+  #start .envelope-wrap { margin:7px auto; }
+  #album .album-slide img,
+  #album .photo-placeholder { height:min(47svh,390px); max-height:min(47svh,390px); }
+  #bouquet .wish.opened { padding:19px 20px; }
+  #bouquet .wish.opened .wish-title:after { margin-top:12px; margin-bottom:10px; padding-top:9px; }
+}
+@media(max-height:700px) {
+  #start .intro-gif { height:clamp(42px,7vh,60px); }
+  #album .album-slide img,
+  #album .photo-placeholder { height:44svh; max-height:44svh; }
+}
+
 </style>
 </head>
 <body>
@@ -220,6 +265,7 @@ body { position:relative; }
     <div class="label">a little something for you</div>
     <h1 style="font-size:clamp(31px,6vw,45px)">Happy Birthday Marty ♡</h1>
     <div class="script">just for you</div>
+    <img class="intro-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWRicDlhdWx3OWo0eGg4ZDU2bnZ5NWhvNHZlY2Iya3p6bGluMHZpcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/i4uvIvnCWoc6Oq2HPR/giphy.gif" alt="A cute little GIF, just for you" loading="eager" onerror="this.style.display='none'">
     <div class="envelope-wrap">
       <button class="envelope" id="openEnvelope" aria-label="Open your birthday envelope">
         <span class="flap"></span><span class="seal">♡</span>
