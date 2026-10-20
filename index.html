@@ -419,13 +419,15 @@ body { position:relative; }
   #start .intro-gif {
     width: min(220px, 49vw);
     max-width: 49%;
-    height: min(155px, 21vh);
+    height: auto;
+    max-height: min(155px, 21vh);
+    object-fit: contain;
     right: 2%;
     top: 33%;
   }
 }
 @media (max-height: 700px) {
-  #start .intro-gif { height: min(185px, 24vh); }
+  #start .intro-gif { max-height: min(155px, 22vh); }
 }
 </style>
 </head>
