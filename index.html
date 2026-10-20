@@ -415,19 +415,24 @@ body { position:relative; }
   right: clamp(8px, 2.5%, 30px);
   top: 29%;
 }
+/* On phones, place the GIF in normal flow below “just for you” so it never covers the lettering. Desktop layout stays unchanged. */
 @media (max-width: 600px) {
   #start .intro-gif {
-    width: min(220px, 49vw);
-    max-width: 49%;
-    height: auto;
-    max-height: min(155px, 21vh);
+    position: relative;
+    display: block;
+    width: min(220px, 70vw);
+    max-width: 100%;
+    height: clamp(95px, 16vh, 140px);
+    max-height: none;
     object-fit: contain;
-    right: 2%;
-    top: 33%;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 8px auto 10px;
   }
 }
-@media (max-height: 700px) {
-  #start .intro-gif { max-height: min(155px, 22vh); }
+@media (max-height: 700px) and (max-width: 600px) {
+  #start .intro-gif { height: clamp(85px, 14vh, 120px); }
 }
 </style>
 </head>
@@ -568,7 +573,7 @@ const albumCaptions = [
   'Look how tiny and adorable you are! Your hands on your hips like you own the whole garden, and that smile is my world and still gets me every time. ♡',
   'Okay, that’s obviously AI, but manifesting this moment until we get there. ♡',
   'Your style is always on point, wifey — the classiest, most elegant woman in the room, and somehow still the hottest person to ever exist. ♡',
-  'And this penguin clay represents me sitting on your heart, forever and always. ♡'
+  'so wholesome and adorable bae and this penguin is never leaving this warm heart of yours❤️'
 ];
 let currentMemory = 0;
 function showMemory(next) {
