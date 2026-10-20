@@ -370,6 +370,42 @@ body { position:relative; }
   .page .card { padding-top: clamp(20px, 3vh, 30px); padding-bottom: clamp(20px, 3vh, 30px); }
 }
 
+
+
+/* Final dog GIF placement: larger, on the right beside “just for you,” below Marty’s name. */
+#start .card { position: relative; }
+#start .script { margin-bottom: 4px; }
+#start .intro-gif {
+  position: absolute;
+  display: block;
+  width: clamp(175px, 21vw, 245px);
+  max-width: 32%;
+  height: clamp(112px, 17vh, 155px);
+  object-fit: contain;
+  right: clamp(18px, 5%, 58px);
+  top: 35%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+  transform: translateY(-4%);
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  #start .intro-gif {
+    width: min(145px, 36vw);
+    max-width: 36%;
+    height: min(100px, 14vh);
+    right: 4%;
+    top: 36%;
+  }
+}
+@media (max-height: 700px) {
+  #start .intro-gif { height: min(112px, 15vh); }
+}
 </style>
 </head>
 <body>
