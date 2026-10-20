@@ -406,6 +406,27 @@ body { position:relative; }
 @media (max-height: 700px) {
   #start .intro-gif { height: min(112px, 15vh); }
 }
+
+/* One last GIF size increase; keep its right-side placement. */
+#start .intro-gif {
+  width: clamp(230px, 29vw, 330px);
+  max-width: 42%;
+  height: clamp(150px, 22vh, 205px);
+  right: clamp(12px, 3.5%, 42px);
+  top: 32%;
+}
+@media (max-width: 600px) {
+  #start .intro-gif {
+    width: min(180px, 43vw);
+    max-width: 43%;
+    height: min(125px, 17vh);
+    right: 3%;
+    top: 35%;
+  }
+}
+@media (max-height: 700px) {
+  #start .intro-gif { height: min(160px, 20vh); }
+}
 </style>
 </head>
 <body>
